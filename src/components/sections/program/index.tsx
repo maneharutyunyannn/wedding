@@ -79,7 +79,7 @@ const program: ProgramProps[] = [
         time: "16:00",
         place: "«Dream Park» ռեստորան",
         address: "Լոռու մարզ, Գյուլագարակ գյուղ",
-        image: "/dendropark.png",
+        image: "/ChatGPT Image Jul 4, 2026, 02_37_56 PM.png",
         map: "https://maps.app.goo.gl/RQz5fM9NJbCqLSsr5",
     },
 ];

@@ -72,6 +72,12 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                     overflow: hidden;
                 }
 
+                .dark .stage {
+                    --paper: #0f0f0f;
+                    --envelope: #1f1f1f;
+                    --envelope-shadow: #2a2a2a;
+                }
+
                 .envelope-wrap {
                     perspective: 1400px;
                     transition: opacity 0.7s ease, transform 0.7s ease;
