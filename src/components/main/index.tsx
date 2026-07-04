@@ -13,15 +13,12 @@ import  { MusicPlayerHandle } from "@/components/music-player";
 
 export default function Main() {
     const [opened, setOpened] = useState(false);
-    const musicRef = useRef<MusicPlayerHandle>(null);
+
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const handleOpen = () => {
-        console.log("CLICK TRIGGERED");
-
-        const res = musicRef.current?.play();
-        console.log("PLAY RESULT:", res);
-
-        setTimeout(() => setOpened(true), 900);
+        videoRef.current?.play();
+        setOpened(true);
     };
 
 
@@ -30,10 +27,9 @@ export default function Main() {
             <div className="fixed inset-0 -z-10">
 
                 <video
-                    autoPlay
+                    ref={videoRef}
                     loop
                     playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
                 >
                     <source src="/lady.webm" type="video/webm"/>
                 </video>
