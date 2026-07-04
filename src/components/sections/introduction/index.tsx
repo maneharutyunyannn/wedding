@@ -6,8 +6,8 @@ import { dzeragir } from "@/config /font";
 
 export function IntroductionSection() {
     return (
-        <section className="py-10 relative min-h-screen snap-start overflow-hidden">
-            <div className="relative z-10 flex min-h-screen flex-col items-center justify-center gap-6 px-6 py-16 text-center">
+        <section className="py-10  relative min-h-[100dvh] snap-start overflow-hidden">
+            <div className="relative z-10 flex min-h-[100dvh] flex-col items-center justify-center gap-6 px-6 py-16 text-center">
 
                 <h2 className={cn(dzeragir.className, "text-4xl text-[#FFE0B2]")}>
                     Սիրելի՛ ընկերներ և հարազատներ
