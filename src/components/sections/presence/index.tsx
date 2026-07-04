@@ -56,7 +56,8 @@ export function PresenceSection() {
 
                 <div className="mt-6 w-full rounded-lg border border-[#FFF2DF] bg-[#FFF2DF]/50 p-4">
                     <h3 className={cn(dzeragir.className, "text-lg text-[#3A2A1E]")}>
-                        Խնդրում ենք հաստատել մասնակցությունը մինչև հուլիսի 30-ը
+                        Սպասում ենք ձեր պատասխանին մինչև
+                        <span className="block">31.07.2026</span>
                     </h3>
                 </div>
 
@@ -92,7 +93,7 @@ export function PresenceSection() {
                             />
 
                             <NumericFormat
-                                inputClassName="border-0 border-b rounded-none"
+                                inputClassName="text-white border-0 border-b rounded-none"
                                 control={form.control}
                                 name="count"
                                 label="Հյուրերի քանակ"
@@ -111,6 +112,9 @@ export function PresenceSection() {
                         </div>
                     </FieldGroup>
                 </form>
+
+
+                <h3 className={cn("text-3xl text-white pt-10 font-semibold", dzeragir.className)}>Մինչ հանդիպու՜մ</h3>
             </div>
         </section>
     );

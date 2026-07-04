@@ -1,6 +1,8 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { cn } from "@/lib/utils";
+import { dzeragir, vrdznagir } from "@/config /font";
 
 type Props = {
     onFinish?: () => void;
@@ -34,9 +36,19 @@ export default function WeddingEnvelope({ onFinish }: Props) {
     const hideEnvelope = phase === 'done';
 
     return (
-        <div className={`stage ${isOpened ? 'is-opened' : ''} ${hideEnvelope ? 'is-letter' : ''}`}>
+        <div
+            className={cn(
+                "stage",
+                {
+                    "is-opened": isOpened,
+                    "is-letter": hideEnvelope,
+                },
+                "flex flex-col gap-10"
+            )}
+        >
             <div className="envelope-wrap">
                 <div className="envelope">
+
                     <div className="pocket" />
 
                     <div
@@ -51,9 +63,44 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                         disabled={isOpened}
                         aria-label="open"
                     >
-                        <img src="/seal.png" alt="seal" className="seal-image" draggable={false} />
+                        <img
+                            src="/seal.png"
+                            alt="seal"
+                            className="seal-image"
+                            draggable={false}
+                        />
                     </button>
+
+                    {/* TEXT INSIDE ENVELOPE */}
+                    <h2 className={cn(vrdznagir.className, "invite-text")}>
+                        Դուք հրավիրված եք մեր հարսանիքին
+                    </h2>
+
                 </div>
+            </div>
+
+            <div className="hint">
+                <p className={cn(vrdznagir.className, "text-white text-lg leading-[16px] pr-14 font-semibold")}>
+                    <span className="block">Սեղմիր</span>
+                    <span className="block">այստեղ</span>
+                </p>
+
+                <svg className="hint-arrow" viewBox="0 0 200 200">
+                    <path
+                        d="M20,40 C80,10 120,140 170,120"
+                        fill="none"
+                        stroke="rgba(255,255,255,0.9)"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                    />
+                    <path
+                        d="M165,115 L175,120 L165,125"
+                        fill="none"
+                        stroke="rgba(255,255,255,0.9)"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                    />
+                </svg>
             </div>
 
             <style jsx>{`
@@ -140,6 +187,40 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                     opacity: 0;
                     pointer-events: none;
                     transform: translateX(-50%) scale(0.7);
+                }
+
+                .invite-text {
+                    position: absolute;
+                    bottom: 18px;
+                    left: 55%;
+                    transform: translateX(-50%);
+                    width: 90%;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: rgba(255, 255, 255, 0.95);
+                    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+                    z-index: 10000;
+                }
+
+                .hint {
+                    position: absolute;
+                    bottom: 305px;
+                    left: 30%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    pointer-events: none;
+                    z-index: 10;
+                }
+
+                .hint-arrow {
+                    width: 90px;
+                    height: 90px;
+                    opacity: 0.85;
+                    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+                    animation: arrowFloat 2.2s ease-in-out infinite;
                 }
             `}</style>
         </div>

@@ -14,6 +14,7 @@ import { Input } from "@/components/shadcn-ui/input";
 import { cn } from "@/lib/utils";
 import { NumericFormat as UINumericFormat } from "react-number-format";
 import React from "react";
+import {dzeragir} from "@/config /font";
 
 type Props = {
     description?: React.ReactNode;
@@ -72,7 +73,7 @@ function NumericFormat<
             render={({ field, fieldState }) => (
                 <Field className={className} data-invalid={fieldState.invalid}>
                     {label && (
-                        <FieldLabel htmlFor={id ?? field.name}>
+                        <FieldLabel htmlFor={id ?? field.name} className={cn("text-white text-lg font-semibold leading-[18px] md:leading-[24px]", dzeragir.className)}>
                             {label}{" "}
                             {required && (
                                 <span className="text-destructive">
