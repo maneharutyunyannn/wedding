@@ -27,6 +27,7 @@ export default function Main() {
             <div className="fixed inset-0 -z-10">
 
                 <video
+                    className="hidden"
                     ref={videoRef}
                     loop
                     playsInline
