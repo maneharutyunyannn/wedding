@@ -38,7 +38,7 @@ export default function Main() {
                     alt="background"
                     fill
                     priority
-                    className="scale-105 object-cover"
+                    className="min-h-[100dvh] scale-105 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40"/>
             </div>
