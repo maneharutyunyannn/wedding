@@ -18,7 +18,7 @@ interface ProgramProps {
 
 export function ProgramSection() {
     return (
-        <section className="relative mx-auto min-h-screen w-full max-w-md snap-start overflow-hidden">
+        <section className="py-10 relative mx-auto min-h-screen w-full max-w-md snap-start overflow-hidden">
             <div className="relative z-10 flex min-h-screen flex-col items-center px-6 py-16 text-center">
                 <h2 className={cn(dzeragir.className, "text-4xl text-[#FFE0B2]")}>
                     Օրվա ծրագիրը

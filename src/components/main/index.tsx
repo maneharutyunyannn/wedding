@@ -9,7 +9,6 @@ import { IntroductionSection } from "@/components/sections/introduction";
 import { ProgramSection } from "@/components/sections/program";
 import { TimerSection } from "@/components/sections/timer";
 import { PresenceSection } from "@/components/sections/presence";
-import  { MusicPlayerHandle } from "@/components/music-player";
 
 export default function Main() {
     const [opened, setOpened] = useState(false);
@@ -25,7 +24,6 @@ export default function Main() {
     return (
         <main className="relative mx-auto max-w-md overflow-hidden">
             <div className="fixed inset-0 -z-10">
-
                 <video
                     className="hidden"
                     ref={videoRef}
