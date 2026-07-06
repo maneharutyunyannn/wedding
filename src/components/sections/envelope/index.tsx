@@ -204,7 +204,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
 
                 .hint {
                     position: absolute;
-                    bottom: 275px;
+                    bottom: 225px;
                     left: 30%;
                     transform: translateX(-50%);
                     display: flex;
