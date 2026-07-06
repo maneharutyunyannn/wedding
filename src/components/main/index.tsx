@@ -13,6 +13,8 @@ import { PresenceSection } from "@/components/sections/presence";
 
 export default function Main() {
     const [opened, setOpened] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
     const [activeIndex, setActiveIndex] = useState(0);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -22,9 +24,12 @@ export default function Main() {
     const autoTimerRef = useRef<NodeJS.Timeout | null>(null);
     const resumeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-    const handleOpen = () => setOpened(true);
+    const handleOpen = () => {
+        videoRef.current?.play();
+        setOpened(true);
+    };
 
-    // ---------- AUTO SCROLL ----------
+
     const goTo = (index: number) => {
         const container = containerRef.current;
         const target = sectionsRef.current[index];
@@ -62,7 +67,6 @@ export default function Main() {
         }, 3000);
     };
 
-    // ---------- OBSERVER (SOURCE OF TRUTH) ----------
     useEffect(() => {
         if (!opened) return;
 
@@ -97,7 +101,6 @@ export default function Main() {
         return () => observer.disconnect();
     }, [opened]);
 
-    // ---------- AUTO SCROLL TRIGGER ----------
     useEffect(() => {
         if (!opened) return;
         scheduleAutoScroll();
@@ -107,7 +110,6 @@ export default function Main() {
         };
     }, [activeIndex, opened]);
 
-    // ---------- USER INTERACTION PAUSE ----------
     useEffect(() => {
         const onInteract = () => {
             userInteracting.current = true;
@@ -133,6 +135,16 @@ export default function Main() {
     return (
         <main className="relative max-w-sm mx-auto overflow-hidden">
             <div className="fixed inset-0 -z-10">
+                <video
+                    className="hidden"
+                    ref={videoRef}
+                    loop
+                    playsInline
+                >
+                    <source src="/lady.webm" type="video/webm"/>
+                </video>
+
+
                 <Image
                     src="/main.jpg"
                     alt="background"
@@ -140,7 +152,7 @@ export default function Main() {
                     priority
                     className="object-cover scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/40"/>
             </div>
 
             <AnimatePresence>
@@ -148,7 +160,7 @@ export default function Main() {
                     <motion.div
                         key="envelope"
                         className="fixed inset-0 z-50"
-                        exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+                        exit={{opacity: 0, scale: 1.05, filter: "blur(10px)"}}
                         transition={{ duration: 0.8 }}
                     >
                         <WeddingEnvelope onFinish={handleOpen} />
