@@ -18,13 +18,12 @@ interface ProgramProps {
 
 export function ProgramSection() {
     return (
-        <section className="py-10 relative mx-auto min-h-[100dvh] w-full max-w-md snap-start">
-            <div className="relative z-10 flex min-h-[100dvh] flex-col items-center px-6 py-16 text-center">
+        <section className="relative mx-auto min-h-[100dvh] w-full max-w-md  overflow-hidden flex flex-col items-center px-6 py-8 text-center">
                 <h2 className={cn(dzeragir.className, "text-4xl text-[#FFE0B2]")}>
                     Օրվա ծրագիրը
                 </h2>
 
-                <div className="mt-10 flex w-full flex-col gap-14">
+                <div className="mt-10 flex w-full flex-col gap-10">
                     {program.map((item) => (
                         <article key={item.title} className="flex flex-col items-center">
                             <h3 className={cn(dzeragir.className, "pt-3 text-xl text-white")}>
@@ -35,7 +34,7 @@ export function ProgramSection() {
                                 {item.time}
                             </p>
 
-                            <div className="relative h-56 w-56">
+                            <div className="relative h-40 w-40 max-h-[30vh]">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
@@ -49,18 +48,13 @@ export function ProgramSection() {
                                 variant="outline"
                                 className="mt-4 rounded-xl border-[#FFE0B2] bg-transparent px-6 text-white hover:text-white hover:bg-transparent"
                             >
-                                <Link
-                                    href={item.map}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
+                                <Link href={item.map} target="_blank">
                                     {item.place}
                                 </Link>
                             </Button>
                         </article>
                     ))}
                 </div>
-            </div>
         </section>
     );
 }

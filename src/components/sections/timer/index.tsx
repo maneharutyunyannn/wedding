@@ -30,7 +30,7 @@ export function TimerSection() {
     }, []);
 
     return (
-        <section className="py-10 relative mx-auto flex min-h-[100dvh] w-full max-w-md snap-start flex-col items-center justify-center gap-10">
+        <section className="relative mx-auto flex h-full w-full max-w-md flex-col items-center justify-center gap-10">
             <h2 className={cn(dzeragir.className, "text-center text-3xl text-white")}>
                 Մինչ հարսանիքը մնացել է
             </h2>

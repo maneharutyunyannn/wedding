@@ -48,8 +48,7 @@ export function PresenceSection() {
     const {isValid} = form.formState;
 
     return (
-        <section className="py-10 relative mx-auto min-h-[100dvh] w-full max-w-md snap-start overflow-hidden">
-            <div className="relative z-10 flex min-h-[100dvh] w-full flex-col items-center px-6 py-16 text-center">
+        <section className="relative mx-auto min-h-[100dvh] px-6 pt-8 pb-20 w-full max-w-md overflow-hidden text-center">
                 <h2 className={cn(dzeragir.className, "text-3xl text-white")}>
                     Խնդրում ենք հաստատել ներկայությունը
                 </h2>
@@ -115,7 +114,6 @@ export function PresenceSection() {
 
 
                 <h3 className={cn("text-3xl text-white pt-10 font-semibold", dzeragir.className)}>Մինչ հանդիպու՜մ</h3>
-            </div>
         </section>
     );
 }

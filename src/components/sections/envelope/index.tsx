@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { cn } from "@/lib/utils";
-import { dzeragir, vrdznagir } from "@/config /font";
+import { vrdznagir } from "@/config /font";
 
 type Props = {
     onFinish?: () => void;
@@ -71,7 +71,6 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                         />
                     </button>
 
-                    {/* TEXT INSIDE ENVELOPE */}
                     <h2 className={cn(vrdznagir.className, "invite-text")}>
                         Դուք հրավիրված եք մեր հարսանիքին
                     </h2>
@@ -79,7 +78,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                 </div>
             </div>
 
-            <div className="hint">
+            <div className="hint md:pl-[400px] pb-22">
                 <p className={cn(vrdznagir.className, "text-white text-lg leading-[16px] pr-14 font-semibold")}>
                     <span className="block">Սեղմիր</span>
                     <span className="block">այստեղ</span>
@@ -205,7 +204,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
 
                 .hint {
                     position: absolute;
-                    bottom: 305px;
+                    bottom: 275px;
                     left: 30%;
                     transform: translateX(-50%);
                     display: flex;
