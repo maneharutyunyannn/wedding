@@ -64,7 +64,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                         aria-label="open"
                     >
                         <img
-                            src="/seal.png"
+                            src="/seal23.png"
                             alt="seal"
                             className="seal-image"
                             draggable={false}
@@ -78,7 +78,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
                 </div>
             </div>
 
-            <div className="hint md:pl-[400px] pb-22">
+            <div className="hint md:pl-[400px] pb-30">
                 <p className={cn(vrdznagir.className, "text-white text-lg leading-[16px] pr-14 font-semibold")}>
                     <span className="block">Սեղմիր</span>
                     <span className="block">այստեղ</span>
@@ -204,7 +204,7 @@ export default function WeddingEnvelope({ onFinish }: Props) {
 
                 .hint {
                     position: absolute;
-                    bottom: 225px;
+                    bottom: 185px;
                     left: 30%;
                     transform: translateX(-50%);
                     display: flex;
