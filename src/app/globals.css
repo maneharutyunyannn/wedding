@@ -117,11 +117,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-body {
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -131,6 +126,12 @@ body {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 

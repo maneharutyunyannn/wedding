@@ -171,14 +171,14 @@ export default function Main() {
             {opened && (
                 <motion.div
                     ref={containerRef}
-                    className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth no-scrollbar"
+                    className="h-dvh overflow-y-auto snap-y snap-mandatory scroll-smooth no-scrollbar"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <div
                         ref={el => { if (el) sectionsRef.current[0] = el; }}
-                        className="h-screen snap-start"
+                        className="h-dvh snap-start"
                     >
                         <HeroSection />
                     </div>
@@ -206,7 +206,7 @@ export default function Main() {
 
                     <div
                         ref={el => { if (el) sectionsRef.current[4] = el; }}
-                        className="min-h-screen snap-start"
+                        className="min-h-dvh pb-safe snap-start"
                     >
                         <PresenceSection />
                     </div>
