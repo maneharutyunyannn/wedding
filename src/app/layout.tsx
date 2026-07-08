@@ -18,20 +18,29 @@ export const metadata: Metadata = {
   description: "Wedding Invitation",
 
   openGraph: {
-    title: "Wedding Invitation",
-    description: "We invite you to our wedding.",
+    title: "Hovhannes & Liana",
+    description: "Wedding Invitation",
     url: "https://wedding-hovhannes-liana.vercel.app/",
-    siteName: "Wedding",
+    siteName: "Hovhannes & Liana",
     images: [
       {
         url: "https://wedding-hovhannes-liana.vercel.app/main.jpg",
         width: 1200,
         height: 630,
-        alt: "Wedding invitation",
+        alt: "Hovhannes & Liana Wedding",
       },
     ],
     locale: "hy_AM",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Hovhannes & Liana",
+    description: "Wedding Invitation",
+    images: [
+      "https://wedding-hovhannes-liana.vercel.app/main.jpg",
+    ],
   },
 };
 
