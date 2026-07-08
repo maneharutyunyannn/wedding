@@ -1,8 +1,8 @@
 'use client';
 
-import Image from "next/image";
 import {cn} from "@/lib/utils";
 import {dzeragir} from "@/config /font";
+import WeddingCalendar from "@/components/ui/calendar";
 
 export function IntroductionSection() {
     return (
@@ -20,13 +20,8 @@ export function IntroductionSection() {
                 Օգոստոս
             </h3>
 
-            <div className="relative aspect-[2/1] w-full max-w-sm">
-                <Image
-                    src="/calendar2.png"
-                    alt="calendar"
-                    fill
-                    className="object-contain"
-                />
+            <div className="w-full">
+                <WeddingCalendar />
             </div>
         </section>
     );

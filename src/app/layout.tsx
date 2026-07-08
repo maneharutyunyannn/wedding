@@ -16,16 +16,31 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hovhannes & Liana",
   description: "Wedding Invitation",
+
+  openGraph: {
+    title: "Wedding Invitation",
+    description: "We invite you to our wedding.",
+    url: "https://wedding-hovhannes-liana.vercel.app/",
+    siteName: "Wedding",
+    images: [
+      {
+        url: "https://wedding-hovhannes-liana.vercel.app/main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Wedding invitation",
+      },
+    ],
+    locale: "hy_AM",
+    type: "website",
+  },
 };
 
-
-// Configure these values as needed
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  viewportFit: 'cover', // very  important you know this
+  viewportFit: 'cover',
 };
 export default function RootLayout({
   children,

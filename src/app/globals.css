@@ -143,3 +143,79 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-auto-rows: 50px;
+  width: fit-content;
+  background: transparent;
+}
+
+.weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+
+  font-family: sans-serif;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell span {
+  position: relative;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.selected::before,
+.selected::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 2px solid #eac28f;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.selected::before {
+  width: 58px;
+  height: 54px;
+
+  border: 2px solid #eac28f;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) rotate(-12deg);
+
+  opacity: 0.9;
+}
+
+.selected::after {
+  width: 54px;
+  height: 60px;
+
+  border: 1.5px solid #eac28f;
+  border-radius: 48% 52% 50% 46%;
+
+  transform: translate(-50%, -50%) rotate(18deg);
+
+  opacity: 0.75;
+}
