@@ -135,14 +135,14 @@ export default function Main() {
     return (
         <main className="relative max-w-sm mx-auto overflow-hidden">
             <div className="fixed inset-0 -z-10">
-                {/*<video*/}
-                {/*    className="hidden"*/}
-                {/*    ref={videoRef}*/}
-                {/*    loop*/}
-                {/*    playsInline*/}
-                {/*>*/}
-                {/*    <source src="/lady.webm" type="video/webm"/>*/}
-                {/*</video>*/}
+                <video
+                    className="hidden"
+                    ref={videoRef}
+                    loop
+                    playsInline
+                >
+                    <source src="/lady.webm" type="video/webm"/>
+                </video>
 
 
                 <Image
